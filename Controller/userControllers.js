@@ -76,7 +76,7 @@ const login = async (req, res) => {
     if(!email || !password) return res.status(400).json({"msg":"missing params"})
     const user = await userModel.findUserByUsername(email);
     if (!user) {
-      res.status(401).json({status:401, error: 'Invalid username or password' });
+      res.status(401).json({created:false, error: 'Invalid username or password' });
       return;
     }
 
