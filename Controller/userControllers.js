@@ -47,8 +47,6 @@ const sendMailOtp = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-
-
 const emailVerify = async (req,res)=>{
 try {
   // const email = res.email;
@@ -69,7 +67,6 @@ try {
   return res.status(500).json({ error: 'Internal server error' });
 }
 }
-
 const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -102,8 +99,6 @@ const login = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 };
-
-
 const createCategory = async (req,res)=> {
 try {
   const user = await userModel.createmany();
@@ -114,7 +109,6 @@ try {
   res.status(500).json({mag:"internal server error"})
 }
 } 
-
 const showCategory = async (req, res) => {
   const userId = res.userId;
   const page = parseInt(req.query.page) || 1;
@@ -154,8 +148,6 @@ const showCategory = async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 }
-
-
 const selectDeselectCategory = async (req,res)=>{
   const {categoryId, isSelected } = req.body; // Extract user ID, category ID, and selection status from request body
   const userId = res.userId;
