@@ -29,6 +29,7 @@ const register = async (req, res)=> {
 const sendMailOtp = async (req, res) => {
   try {
     const { email } = req.body;
+    console.log(email)
     if(!email) return res.status(400).json({msg:"email missing"})
     // Check if email is verified
     const user = await userModel.findUserByUsername(email);
@@ -85,7 +86,7 @@ const login = async (req, res) => {
 
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      res.status(401).json({ error: 'Invalid username or password' });
+      res.status(401).json({ error: 'Invalid password' });
       return;
     }
 
