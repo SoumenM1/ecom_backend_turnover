@@ -1,4 +1,5 @@
 Ecommerce API Documentation
+
 1. User Registration
 Endpoint: POST /api/register
 
@@ -13,6 +14,7 @@ Copy code
     "email": "string",
     "password": "string"
 }
+
 2. Send OTP Email
 Endpoint: POST /api/sendMail
 
@@ -25,6 +27,8 @@ Copy code
 {
     "email": "string"
 }
+
+
 3. Verify OTP
 Endpoint: POST /api/verifyMail
 
@@ -38,6 +42,7 @@ Copy code
     "otp": "string",
     "email": "string"
 }
+
 4. User Login
 Endpoint: POST /api/login
 
@@ -58,6 +63,7 @@ Copy code
 {
     "token": "string"
 }
+
 5. Get Categories
 Endpoint: GET /api/getCategory?page=1
 
@@ -100,6 +106,7 @@ Copy code
     ],
     "totalPages": 33
 }
+
 6. Toggle Category Selection
 Endpoint: PATCH /api/category/isSelect
 
